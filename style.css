@@ -1,0 +1,1022 @@
+/* ==========================================================================
+   1. VARIÁVEIS CSS E TEMAS (LIGHT E DARK MODE)
+   ========================================================================== */
+
+/* Tema Escuro (Padrão) */
+:root, body.tema-escuro {
+    --cor-fundo: #121214;
+    --cor-fundo-card: #1e1e24;
+    --cor-fundo-secundario: #18181b;
+    --cor-borda: #2d2d35;
+    
+    --cor-texto-principal: #f4f4f5;
+    --cor-texto-secundario: #a1a1aa;
+    
+    --cor-primaria: #bb86fc;
+    --cor-primaria-hover: #9955e8;
+    --cor-primaria-translucida: rgba(187, 134, 252, 0.15);
+    
+    --sombra-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    --sombra-hover: 0 20px 40px -15px rgba(187, 134, 252, 0.25);
+    
+    --cor-branca: #ffffff;
+}
+
+/* Tema Claro (Light Mode) */
+body.tema-claro {
+    --cor-fundo: #f8f9fa;
+    --cor-fundo-card: #ffffff;
+    --cor-fundo-secundario: #f1f3f5;
+    --cor-borda: #e9ecef;
+    
+    --cor-texto-principal: #212529;
+    --cor-texto-secundario: #6c757d;
+    
+    --cor-primaria: #0d6efd;
+    --cor-primaria-hover: #0b5ed7;
+    --cor-primaria-translucida: rgba(13, 110, 253, 0.12);
+    
+    --sombra-card: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+    --sombra-hover: 0 20px 40px -15px rgba(13, 110, 253, 0.2);
+}
+
+/* ==========================================================================
+   2. RESET E ESTILOS BASE
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-texto-principal);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.conteiner {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cor-fundo);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cor-borda);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-primaria);
+}
+
+/* ==========================================================================
+   3. CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(18, 18, 20, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--cor-borda);
+    transition: all 0.4s ease;
+}
+
+body.tema-claro .cabecalho {
+    background-color: rgba(248, 249, 250, 0.85);
+}
+
+.cabecalho-conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-texto-principal);
+}
+
+.logo span {
+    color: var(--cor-primaria);
+}
+
+.lista-navegacao {
+    display: flex;
+    gap: 2rem;
+}
+
+.link-menu {
+    font-weight: 500;
+    color: var(--cor-texto-secundario);
+    transition: color 0.3s ease;
+}
+
+.link-menu:hover {
+    color: var(--cor-primaria);
+}
+
+.acoes-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Botão de Tema Light/Dark */
+.botao-tema {
+    background: transparent;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto-principal);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.botao-tema:hover {
+    background-color: var(--cor-primaria-translucida);
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+body.tema-escuro .icone-sol { display: block; }
+body.tema-escuro .icone-lua { display: none; }
+body.tema-claro .icone-sol { display: none; }
+body.tema-claro .icone-lua { display: block; }
+
+/* Botão Menu Mobile */
+.botao-menu-mobile {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--cor-texto-principal);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.botao-menu-mobile .icone-fechar { display: none; }
+
+/* ==========================================================================
+   4. BOTÕES E COMPONENTES REUTILIZÁVEIS
+   ========================================================================== */
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.botao-primario {
+    background-color: var(--cor-primaria);
+    color: #121214;
+}
+
+body.tema-claro .botao-primario {
+    color: #ffffff;
+}
+
+.botao-primario:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px var(--cor-primaria-translucida);
+    opacity: 0.95;
+}
+
+.botao-secundario {
+    background-color: transparent;
+    border-color: var(--cor-borda);
+    color: var(--cor-texto-principal);
+}
+
+.botao-secundario:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+    transform: translateY(-3px);
+}
+
+.botao-outline {
+    background: transparent;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto-principal);
+}
+
+.botao-outline:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+.botao-pequeno {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+}
+
+/* Títulos das Seções */
+.cabecalho-secao {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.titulo-secao {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo-secao {
+    color: var(--cor-texto-secundario);
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   5. SEÇÃO HERO
+   ========================================================================== */
+
+.secao-hero {
+    padding: 180px 0 100px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.grid-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.badge-apresentacao {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    background-color: var(--cor-primaria-translucida);
+    color: var(--cor-primaria);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.ponto-status {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px #10b981;
+}
+
+.titulo-hero {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.destaque-nome {
+    color: var(--cor-primaria);
+}
+
+.subtitulo-hero {
+    font-size: 1.5rem;
+    color: var(--cor-texto-secundario);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    min-height: 2.2rem;
+}
+
+.cursor-typing {
+    color: var(--cor-primaria);
+    animation: piscar 0.8s infinite;
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.descricao-hero {
+    color: var(--cor-texto-secundario);
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.botoes-hero {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Ilustração / Código em Destaque */
+.cartao-codigo-decorativo {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--sombra-card);
+}
+
+.cabecalho-codigo {
+    background-color: var(--cor-fundo-secundario);
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.bolinha {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.bolinha-vermelha { background-color: #ef4444; }
+.bolinha-amarela { background-color: #f59e0b; }
+.bolinha-verde { background-color: #10b981; }
+
+.titulo-arquivo {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: var(--cor-texto-secundario);
+    font-family: monospace;
+}
+
+.corpo-codigo {
+    padding: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    color: var(--cor-texto-principal);
+    line-height: 1.8;
+}
+
+.chave { color: var(--cor-primaria); }
+.texto { color: #10b981; }
+
+/* ==========================================================================
+   6. SEÇÃO SOBRE MIM
+   ========================================================================== */
+
+.secao-sobre {
+    padding: 100px 0;
+    background-color: var(--cor-fundo-secundario);
+}
+
+.cartao-sobre {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    box-shadow: var(--sombra-card);
+}
+
+.icone-sobre {
+    font-size: 3.5rem;
+    color: var(--cor-primaria);
+    background-color: var(--cor-primaria-translucida);
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.texto-sobre p {
+    margin-bottom: 1.2rem;
+    color: var(--cor-texto-secundario);
+    font-size: 1.05rem;
+}
+
+.texto-sobre p:last-child {
+    margin-bottom: 0;
+}
+
+.texto-sobre strong {
+    color: var(--cor-texto-principal);
+}
+
+/* ==========================================================================
+   7. SEÇÃO HABILIDADES (HARD SKILLS)
+   ========================================================================== */
+
+.secao-habilidades {
+    padding: 100px 0;
+}
+
+.grid-habilidades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.cartao-habilidade {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--sombra-card);
+}
+
+.cartao-habilidade:hover {
+    transform: translateY(-8px);
+    border-color: var(--cor-primaria);
+    box-shadow: var(--sombra-hover);
+}
+
+.icone-habilidade {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.icone-habilidade.html { color: #e34f26; }
+.icone-habilidade.css { color: #1572b6; }
+.icone-habilidade.js { color: #f7df1e; }
+.icone-habilidade.logica { color: var(--cor-primaria); }
+.icone-habilidade.git { color: #f05032; }
+.icone-habilidade.github { color: var(--cor-texto-principal); }
+
+.cartao-habilidade h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cartao-habilidade p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   8. SEÇÃO FORMAÇÃO ACADÊMICA
+   ========================================================================== */
+
+.secao-educacao {
+    padding: 100px 0;
+    background-color: var(--cor-fundo-secundario);
+}
+
+.cartao-educacao-premium {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: var(--sombra-card);
+    position: relative;
+}
+
+.cabecalho-cartao-educacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.info-principal-educacao h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.subtitulo-escola {
+    color: var(--cor-texto-secundario);
+    font-size: 1rem;
+}
+
+.selo-excelencia {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.instituicao-nome, .previsao-formatura {
+    color: var(--cor-texto-secundario);
+    font-size: 1.05rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.divisoria {
+    height: 1px;
+    background-color: var(--cor-borda);
+    margin: 2rem 0;
+}
+
+.titulo-trilha {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.trilha-badges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.badge-trilha {
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+}
+
+.badge-trilha.concluido {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.badge-trilha.em-andamento {
+    background-color: var(--cor-primaria-translucida);
+    color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
+
+.badge-trilha.futuro {
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-texto-secundario);
+    border-color: var(--cor-borda);
+}
+
+/* ==========================================================================
+   9. SEÇÃO PORTFÓLIO E ESTUDOS
+   ========================================================================== */
+
+.secao-projetos {
+    padding: 100px 0;
+}
+
+/* Subseção A: Projetos de Destaque */
+.grid-projetos-destaque {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.cartao-projeto {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--sombra-card);
+    display: flex;
+    flex-direction: column;
+}
+
+.cartao-projeto:hover {
+    transform: translateY(-10px);
+    border-color: var(--cor-primaria);
+    box-shadow: var(--sombra-hover);
+}
+
+.imagem-projeto {
+    height: 200px;
+    background-color: var(--cor-fundo-secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.placeholder-imagem {
+    font-size: 4rem;
+    color: var(--cor-primaria);
+    opacity: 0.8;
+}
+
+.conteudo-projeto {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.titulo-projeto {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.descricao-projeto {
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.tags-tecnologias {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.8rem;
+}
+
+.tag {
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-primaria);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid var(--cor-borda);
+}
+
+.botoes-projeto {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Subseção B: Repositórios de Estudo */
+.cabecalho-subsecao {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.subtitulo-estudos {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.grid-repositorios-estudo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.cartao-repositorio {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.cartao-repositorio:hover {
+    border-color: var(--cor-primaria);
+    transform: translateY(-4px);
+    background-color: var(--cor-fundo-secundario);
+}
+
+.icone-repositorio {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+}
+
+.info-repositorio {
+    flex-grow: 1;
+}
+
+.info-repositorio h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+
+.info-repositorio p {
+    font-size: 0.85rem;
+    color: var(--cor-texto-secundario);
+}
+
+.icone-link-externo {
+    color: var(--cor-texto-secundario);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.cartao-repositorio:hover .icone-link-externo {
+    color: var(--cor-primaria);
+}
+
+/* ==========================================================================
+   10. SEÇÃO CONTATO (VAMOS CONVERSAR)
+   ========================================================================== */
+
+.secao-contato {
+    padding: 100px 0;
+    background-color: var(--cor-fundo-secundario);
+}
+
+.grid-cards-contato {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.cartao-contato {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--sombra-card);
+}
+
+.icone-contato {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-texto-principal);
+    transition: all 0.3s ease;
+}
+
+.info-contato {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.rotulo-contato {
+    font-size: 0.85rem;
+    color: var(--cor-texto-secundario);
+}
+
+.valor-contato {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--cor-texto-principal);
+}
+
+.icone-seta {
+    color: var(--cor-texto-secundario);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Personalizado por Rede Social */
+.contato-whatsapp:hover {
+    border-color: #25d366;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px -10px rgba(37, 211, 102, 0.3);
+}
+.contato-whatsapp:hover .icone-contato {
+    background-color: #25d366;
+    color: #ffffff;
+}
+
+.contato-email:hover {
+    border-color: #ea4335;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px -10px rgba(234, 67, 53, 0.3);
+}
+.contato-email:hover .icone-contato {
+    background-color: #ea4335;
+    color: #ffffff;
+}
+
+.contato-github:hover {
+    border-color: #8257e5;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px -10px rgba(130, 87, 229, 0.3);
+}
+.contato-github:hover .icone-contato {
+    background-color: #8257e5;
+    color: #ffffff;
+}
+
+.cartao-contato:hover .icone-seta {
+    transform: translateX(5px);
+}
+
+/* ==========================================================================
+   11. RODAPÉ E BOTÃO TOPO
+   ========================================================================== */
+
+.rodape {
+    padding: 2rem 0;
+    border-top: 1px solid var(--cor-borda);
+    text-align: center;
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+}
+
+.icone-coracao {
+    color: #ef4444;
+    display: inline-block;
+    margin: 0 0.2rem;
+}
+
+/* Botão Flutuante Voltar ao Topo */
+.botao-topo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--cor-primaria);
+    color: #121214;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+body.tema-claro .botao-topo {
+    color: #ffffff;
+}
+
+.botao-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+.botao-topo:hover {
+    transform: translateY(-5px);
+}
+
+/* ==========================================================================
+   12. ANIMAÇÕES DE SCROLL (FADE IN UP)
+   ========================================================================== */
+
+.animar-ao-rolar {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animar-ao-rolar.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   13. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Tablets (Até 992px) */
+@media (max-width: 992px) {
+    .grid-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .botoes-hero {
+        justify-content: center;
+    }
+
+    .descricao-hero {
+        margin: 0 auto 2rem;
+    }
+
+    .grid-habilidades {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trilha-badges {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-projetos-destaque {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-repositorios-estudo {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-cards-contato {
+        grid-template-columns: 1fr;
+    }
+
+    .cartao-sobre {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Dispositivos Móveis (Até 768px) */
+@media (max-width: 768px) {
+    .botao-menu-mobile {
+        display: block;
+    }
+
+    .menu-navegacao {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-fundo-card);
+        border-bottom: 1px solid var(--cor-borda);
+        padding: 2rem 0;
+        clip-path: circle(0% at 100% 0);
+        transition: clip-path 0.5s ease-in-out;
+    }
+
+    .menu-navegacao.ativo {
+        clip-path: circle(140% at 100% 0);
+    }
+
+    .lista-navegacao {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .titulo-hero {
+        font-size: 2.2rem;
+    }
+
+    .subtitulo-hero {
+        font-size: 1.2rem;
+    }
+
+    .grid-habilidades {
+        grid-template-columns: 1fr;
+    }
+
+    .cartao-educacao-premium, .cartao-sobre {
+        padding: 1.8rem;
+    }
+}

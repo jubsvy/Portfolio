@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Júlia Victória | Desenvolvedora Full Stack em Formação</title>
+
+    <!-- Google Fonts: Inter e Poppins para tipografia moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Arquivo CSS Externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="tema-escuro">
+
+    <!-- Cabeçalho / Navegação -->
+    <header class="cabecalho">
+        <div class="conteiner cabecalho-conteiner">
+            <a href="#inicio" class="logo">
+                &lt;Júlia<span>Victória</span> /&gt;
+            </a>
+
+            <!-- Menu de Navegação -->
+            <nav class="menu-navegacao" id="menu-navegacao">
+                <ul class="lista-navegacao">
+                    <li><a href="#inicio" class="link-menu">Início</a></li>
+                    <li><a href="#sobre" class="link-menu">Sobre Mim</a></li>
+                    <li><a href="#habilidades" class="link-menu">Habilidades</a></li>
+                    <li><a href="#educacao" class="link-menu">Formação</a></li>
+                    <li><a href="#projetos" class="link-menu">Projetos</a></li>
+                    <li><a href="#contato" class="link-menu">Contato</a></li>
+                </ul>
+            </nav>
+
+            <!-- Ações do Cabeçalho: Alternador de Tema e Hambúrguer Mobile -->
+            <div class="acoes-cabecalho">
+                <button id="botao-tema" class="botao-tema" aria-label="Alternar Tema">
+                    <i class="bi bi-moon-stars-fill icone-lua"></i>
+                    <i class="bi bi-sun-fill icone-sol"></i>
+                </button>
+
+                <button id="botao-menu-mobile" class="botao-menu-mobile" aria-label="Abrir Menu">
+                    <i class="bi bi-list icone-abrir"></i>
+                    <i class="bi bi-x-lg icone-fechar"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Hero / Apresentação -->
+        <section id="inicio" class="secao-hero">
+            <div class="conteiner grid-hero">
+                <div class="conteudo-hero animar-ao-rolar">
+                    <div class="badge-apresentacao">
+                        <span class="ponto-status"></span> Disponível para oportunidades
+                    </div>
+                    <h1 class="titulo-hero">
+                        Olá, eu sou <span class="destaque-nome">Júlia Victória</span>
+                    </h1>
+                    <h2 class="subtitulo-hero">
+                        <span id="texto-maquina-escrever"></span><span class="cursor-typing">|</span>
+                    </h2>
+                    <p class="descricao-hero">
+                        Apaixonada por criar interfaces interativas, modernas e acessíveis. Construindo a base do Front-end rumo ao desenvolvimento Full Stack.
+                    </p>
+                    <div class="botoes-hero">
+                        <a href="curriculo.pdf" download class="botao botao-primario">
+                            <i class="bi bi-file-earmark-arrow-down-fill"></i> Baixar meu CV
+                        </a>
+                        <a href="#contato" class="botao botao-secundario">
+                            <i class="bi bi-chat-dots-fill"></i> Vamos Conversar
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ilustracao-hero animar-ao-rolar">
+                    <div class="cartao-codigo-decorativo">
+                        <div class="cabecalho-codigo">
+                            <span class="bolinha bolinha-vermelha"></span>
+                            <span class="bolinha bolinha-amarela"></span>
+                            <span class="bolinha bolinha-verde"></span>
+                            <span class="titulo-arquivo">desenvolvedora.json</span>
+                        </div>
+                        <pre class="corpo-codigo"><code>{
+  <span class="chave">"nome"</span>: <span class="texto">"Júlia Victória"</span>,
+  <span class="chave">"foco"</span>: <span class="texto">"Front-end &amp; Web UI"</span>,
+  <span class="chave">"instituicao"</span>: <span class="texto">"SESC / SENAC"</span>,
+  <span class="chave">"paixao"</span>: <span class="texto">"Transformar ideias em código"</span>,
+  <span class="chave">"emBuscaDe"</span>: <span class="texto">"Primeira oportunidade na área"</span>
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Mim -->
+        <section id="sobre" class="secao-sobre">
+            <div class="conteiner">
+                <div class="cabecalho-secao animar-ao-rolar">
+                    <h2 class="titulo-secao">Sobre Mim</h2>
+                    <p class="subtitulo-secao">Conheça um pouco da minha trajetória e objetivos</p>
+                </div>
+
+                <div class="cartao-sobre animar-ao-rolar">
+                    <div class="icone-sobre">
+                        <i class="bi bi-person-badge-fill"></i>
+                    </div>
+                    <div class="texto-sobre">
+                        <p>
+                            Sou estudante do 1º ano do Ensino Médio Técnico em Informática para Internet pela <strong>SESC Escola</strong>, em parceria com o <strong>SENAC</strong>.
+                        </p>
+                        <p>
+                            Com forte foco em programação, iniciei minha trilha de aprendizado me especializando em desenvolvimento <strong>Front-end</strong>. Nos próximos anos, minha formação se expandirá para o <strong>Back-end</strong> (2º ano) e desenvolvimento <strong>Mobile</strong> (3º ano), construindo uma base sólida para me tornar uma Desenvolvedora Full Stack completa.
+                        </p>
+                        <p>
+                            Sou apaixonada por criar interfaces interativas, funcionais e intuitivas. Atualmente, estou em busca da minha primeira oportunidade na área de tecnologia para aplicar meus conhecimentos e evoluir constantemente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Habilidades (Hard Skills) -->
+        <section id="habilidades" class="secao-habilidades">
+            <div class="conteiner">
+                <div class="cabecalho-secao animar-ao-rolar">
+                    <h2 class="titulo-secao">Minhas Habilidades</h2>
+                    <p class="subtitulo-secao">Tecnologias e ferramentas que utilizo no dia a dia</p>
+                </div>
+
+                <div class="grid-habilidades">
+                    <div class="cartao-habilidade animar-ao-rolar">
+                        <i class="bi bi-filetype-html icone-habilidade html"></i>
+                        <h3>HTML5</h3>
+                        <p>Estruturação semântica e acessível</p>
+                    </div>
+
+                    <div class="cartao-habilidade animar-ao-rolar">
+                        <i class="bi bi-filetype-css icone-habilidade css"></i>
+                        <h3>CSS3</h3>
+                        <p>Estilização, Flexbox, Grid e Animações</p>
+                    </div>
+
+                    <div class="cartao-habilidade animar-ao-rolar">
+                        <i class="bi bi-filetype-js icone-habilidade js"></i>
+                        <h3>JavaScript</h3>
+                        <p>Lógica, manipulação do DOM e interatividade</p>
+                    </div>
+
+                    <div class="cartao-habilidade animar-ao-rolar">
+                        <i class="bi bi-cpu icone-habilidade logica"></i>
+                        <h3>Lógica &amp; Algoritmos</h3>
+                        <p>Resolução de problemas e estruturação</p>
+                    </div>
+
+                    <div class="cartao-habilidade animar-ao-rolar">
+                        <i class="bi bi-git icone-habilidade git"></i>
+                        <h3>Git</h3>
+                        <p>Controle de versão de projetos</p>
+                    </div>
+
+                    <div class="cartao-habilidade animar-ao-rolar">
+                        <i class="bi bi-github icone-habilidade github"></i>
+                        <h3>GitHub</h3>
+                        <p>Hospedagem de código e portfólio</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Formação Acadêmica -->
+        <section id="educacao" class="secao-educacao">
+            <div class="conteiner">
+                <div class="cabecalho-secao animar-ao-rolar">
+                    <h2 class="titulo-secao">Formação Acadêmica</h2>
+                    <p class="subtitulo-secao">Minha jornada de estudos e evolução técnica</p>
+                </div>
+
+                <div class="cartao-educacao-premium animar-ao-rolar">
+                    <div class="cabecalho-cartao-educacao">
+                        <div class="info-principal-educacao">
+                            <h3>Formação Técnica em Informática para Internet</h3>
+                            <p class="subtitulo-escola">Ensino Médio Integrado ao Técnico</p>
+                        </div>
+                        <div class="selo-excelencia">
+                            <i class="bi bi-patch-check-fill"></i>
+                            <span>Instituição de Excelência</span>
+                        </div>
+                    </div>
+
+                    <p class="instituicao-nome">
+                        <i class="bi bi-building"></i> <strong>SESC ESCOLA</strong> em parceria com <strong>SENAC</strong>
+                    </p>
+                    <p class="previsao-formatura">
+                        <i class="bi bi-calendar-event"></i> Previsão de Formatura: <strong>2026</strong>
+                    </p>
+
+                    <div class="divisoria"></div>
+
+                    <h4 class="titulo-trilha">Trilha de Aprendizado do Curso:</h4>
+                    <div class="trilha-badges">
+                        <div class="badge-trilha concluido">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span>1º Ano: Front-end</span>
+                        </div>
+                        <div class="badge-trilha em-andamento">
+                            <i class="bi bi-hourglass-split"></i>
+                            <span>2º Ano: Back-end</span>
+                        </div>
+                        <div class="badge-trilha futuro">
+                            <i class="bi bi-circle"></i>
+                            <span>3º Ano: Mobile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Portfólio / Projetos -->
+        <section id="projetos" class="secao-projetos">
+            <div class="conteiner">
+                <!-- Subseção A: Projetos de Destaque -->
+                <div class="cabecalho-secao animar-ao-rolar">
+                    <h2 class="titulo-secao">Projetos de Destaque</h2>
+                    <p class="subtitulo-secao">Aplicações práticas e projetos desenvolvidos</p>
+                </div>
+
+                <div class="grid-projetos-destaque">
+                    <!-- Projeto 1 -->
+                    <article class="cartao-projeto animar-ao-rolar">
+                        <div class="imagem-projeto">
+                            <div class="placeholder-imagem">
+                                <i class="bi bi-robot"></i>
+                            </div>
+                        </div>
+                        <div class="conteudo-projeto">
+                            <h3 class="titulo-projeto">Projeto Robô Maker</h3>
+                            <p class="descricao-projeto">
+                                Site do RobôMaker focado em kits educacionais e venda de peças categorizadas para projetos de interesse, além de informações sobre oficinas presenciais com horários e preços.
+                            </p>
+                            <div class="tags-tecnologias">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">Design Responsivo</span>
+                            </div>
+                            <div class="botoes-projeto">
+                                <a href="https://jubsvy.github.io/projeto-robomaker/" target="_blank" rel="noopener noreferrer" class="botao botao-pequeno botao-primario">
+                                    <i class="bi bi-globe"></i> Ver Demo
+                                </a>
+                                <a href="https://github.com/jubsvy/projeto-robomaker" target="_blank" rel="noopener noreferrer" class="botao botao-pequeno botao-outline">
+                                    <i class="bi bi-github"></i> Repositório
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 2 -->
+                    <article class="cartao-projeto animar-ao-rolar">
+                        <div class="imagem-projeto">
+                            <div class="placeholder-imagem">
+                                <i class="bi bi-music-note-beamed"></i>
+                            </div>
+                        </div>
+                        <div class="conteudo-projeto">
+                            <h3 class="titulo-projeto">Compasso Musical</h3>
+                            <p class="descricao-projeto">
+                                Plataforma web no formato de e-commerce dedicada à apresentação e venda de instrumentos musicais diversificados, como baterias, guitarras e acessório musicais.
+                            </p>
+                            <div class="tags-tecnologias">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">UI/UX</span>
+                            </div>
+                            <div class="botoes-projeto">
+                                <a href="https://jubsvy.github.io/compasso-musical/" target="_blank" rel="noopener noreferrer" class="botao botao-pequeno botao-primario">
+                                    <i class="bi bi-globe"></i> Ver Demo
+                                </a>
+                                <a href="https://github.com/jubsvy/compasso-musical" target="_blank" rel="noopener noreferrer" class="botao botao-pequeno botao-outline">
+                                    <i class="bi bi-github"></i> Repositório
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Subseção B: Repositórios de Estudo -->
+                <div class="cabecalho-subsecao animar-ao-rolar">
+                    <h3 class="subtitulo-estudos">Repositórios de Estudo &amp; Práticas</h3>
+                    <p class="subtitulo-secao">Códigos, anotações e exercícios realizados durante as aulas</p>
+                </div>
+
+                <div class="grid-repositorios-estudo">
+                    <a href="https://github.com/jubsvy/html" target="_blank" rel="noopener noreferrer" class="cartao-repositorio animar-ao-rolar">
+                        <div class="icone-repositorio">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <div class="info-repositorio">
+                            <h4>Trilha de HTML e CSS</h4>
+                            <p>Anotações e práticas de marcação semântica e estilização</p>
+                        </div>
+                        <i class="bi bi-arrow-up-right icone-link-externo"></i>
+                    </a>
+
+                    <a href="https://github.com/jubsvy/JavaScript" target="_blank" rel="noopener noreferrer" class="cartao-repositorio animar-ao-rolar">
+                        <div class="icone-repositorio">
+                            <i class="bi bi-filetype-js"></i>
+                        </div>
+                        <div class="info-repositorio">
+                            <h4>Trilha de JavaScript Vanilla</h4>
+                            <p>Exercícios de manipulação de DOM, eventos e lógica JS</p>
+                        </div>
+                        <i class="bi bi-arrow-up-right icone-link-externo"></i>
+                    </a>
+
+                    <a href="https://github.com/jubsvy/algoritimos" target="_blank" rel="noopener noreferrer" class="cartao-repositorio animar-ao-rolar">
+                        <div class="icone-repositorio">
+                            <i class="bi bi-diagram-3-fill"></i>
+                        </div>
+                        <div class="info-repositorio">
+                            <h4>Lógica de Programação e Algoritmos</h4>
+                            <p>Estruturas condicionais, laços e Portugol</p>
+                        </div>
+                        <i class="bi bi-arrow-up-right icone-link-externo"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato / Conecte-se Comigo -->
+        <section id="contato" class="secao-contato">
+            <div class="conteiner">
+                <div class="cabecalho-secao animar-ao-rolar">
+                    <h2 class="titulo-secao">Vamos Conversar?</h2>
+                    <p class="subtitulo-secao">Sinta-se à vontade para entrar em contato ou acompanhar meus estudos</p>
+                </div>
+
+                <div class="grid-cards-contato">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/5599999999999" target="_blank" rel="noopener noreferrer" class="cartao-contato contato-whatsapp animar-ao-rolar">
+                        <div class="icone-contato">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+                        <div class="info-contato">
+                            <span class="rotulo-contato">WhatsApp</span>
+                            <span class="valor-contato">Enviar mensagem</span>
+                        </div>
+                        <i class="bi bi-chevron-right icone-seta"></i>
+                    </a>
+
+                    <!-- E-mail -->
+                    <a href="mailto:victoria.ju2089@gmail.com" target="_blank" rel="noopener noreferrer" class="cartao-contato contato-email animar-ao-rolar">
+                        <div class="icone-contato">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div class="info-contato">
+                            <span class="rotulo-contato">E-mail</span>
+                            <span class="valor-contato">victoria.ju2089@gmail.com</span>
+                        </div>
+                        <i class="bi bi-chevron-right icone-seta"></i>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/jubsvy" target="_blank" rel="noopener noreferrer" class="cartao-contato contato-github animar-ao-rolar">
+                        <div class="icone-contato">
+                            <i class="bi bi-github"></i>
+                        </div>
+                        <div class="info-contato">
+                            <span class="rotulo-contato">GitHub</span>
+                            <span class="valor-contato">@jubsvy</span>
+                        </div>
+                        <i class="bi bi-chevron-right icone-seta"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="conteiner conteudo-rodape">
+            <p>
+                Copyright &copy; <span id="ano-atual"></span> | Desenvolvido com <i class="bi bi-suit-heart-fill icone-coracao"></i> por <strong>Júlia Victória</strong>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante Voltar ao Topo -->
+    <button id="botao-topo" class="botao-topo" aria-label="Voltar ao topo da página">
+        <i class="bi bi-arrow-up-short"></i>
+    </button>
+
+    <!-- Arquivo JS Externo -->
+    <script src="script.js"></script>
+</body>
+</html>
